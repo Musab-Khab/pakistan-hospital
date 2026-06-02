@@ -35,12 +35,39 @@ const nav: NavItem[] = [
 function PatientPortal() {
   return (
     <PortalLayout
-      title="Welcome back, Sarah"
+      title="Welcome back, Sarah / السلام علیکم"
       role="Patient"
       user={{ name: "Sarah Williams", initials: "SW", sub: "MRN 00482910" }}
       nav={nav}
     >
       <div className="grid gap-6">
+        {/* Islamic Ayat — Health & Healing */}
+        <Card className="overflow-hidden border-border bg-gradient-to-br from-emerald-50 via-card to-amber-50 dark:from-emerald-950/40 dark:via-card dark:to-amber-950/30">
+          <CardContent className="p-0">
+            <div className="flex items-center gap-2 border-b border-border bg-background/60 px-5 py-3">
+              <BookOpen className="h-4 w-4 text-primary" />
+              <h2 className="font-display text-sm font-semibold tracking-wide uppercase">Words of Healing · شفاء کے الفاظ</h2>
+            </div>
+            <div className="grid gap-4 p-5 md:grid-cols-2">
+              <figure className="overflow-hidden rounded-xl border border-border bg-card">
+                <img src={ayat1} alt="Quranic verse on healing - Surah Ash-Shu'ara 26:80" loading="lazy" width={1024} height={1024} className="h-56 w-full object-cover" />
+                <figcaption className="p-4">
+                  <p className="font-display text-base font-semibold">"And when I am ill, it is He who cures me."</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Surah Ash-Shu'ara (26:80) · "اور جب میں بیمار ہوتا ہوں تو وہی مجھے شفا دیتا ہے"</p>
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-xl border border-border bg-card">
+                <img src={ayat2} alt="Quranic verse on healing - Surah Al-Isra 17:82" loading="lazy" width={1024} height={1024} className="h-56 w-full object-cover" />
+                <figcaption className="p-4">
+                  <p className="font-display text-base font-semibold">"And We send down of the Qur'an that which is healing and mercy for the believers."</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Surah Al-Isra (17:82) · "اور ہم قرآن میں سے وہ نازل کرتے ہیں جو شفا ہے"</p>
+                </figcaption>
+              </figure>
+            </div>
+          </CardContent>
+        </Card>
+
+
         {/* KPIs */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Kpi label="Upcoming visits" value="3" hint="Next: Jun 8" />
