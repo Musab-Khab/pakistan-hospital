@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  LayoutDashboard, CalendarDays, History, FileText, Pill, FlaskConical, Receipt,
-  CalendarPlus, Download, Video, ArrowRight,
+  LayoutDashboard, CalendarDays, FileText, Pill, FlaskConical, Receipt,
+  CalendarPlus, Download, Video, ArrowRight, UserPlus, BookOpen,
 } from "lucide-react";
 import { PortalLayout, type NavItem } from "@/components/portal/PortalLayout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +14,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   upcomingAppointments, appointmentHistory, prescriptions, labReports, billing,
 } from "@/lib/mock-data";
+import ayat1 from "@/assets/ayat-health-1.jpg";
+import ayat2 from "@/assets/ayat-health-2.jpg";
 
 export const Route = createFileRoute("/patient")({
   head: () => ({ meta: [{ title: "Patient Portal — XYZ Hospital" }, { name: "robots", content: "noindex" }] }),
@@ -22,10 +24,11 @@ export const Route = createFileRoute("/patient")({
 
 const nav: NavItem[] = [
   { to: "/patient", label: "Dashboard", icon: <LayoutDashboard className="h-4 w-4" /> },
+  { to: "/add-patient", label: "Add Patient", icon: <UserPlus className="h-4 w-4" /> },
   { to: "/patient", label: "Appointments", icon: <CalendarDays className="h-4 w-4" /> },
+  { to: "/laboratory", label: "Laboratory", icon: <FlaskConical className="h-4 w-4" /> },
   { to: "/patient", label: "Records", icon: <FileText className="h-4 w-4" /> },
   { to: "/patient", label: "Prescriptions", icon: <Pill className="h-4 w-4" /> },
-  { to: "/patient", label: "Lab reports", icon: <FlaskConical className="h-4 w-4" /> },
   { to: "/patient", label: "Billing", icon: <Receipt className="h-4 w-4" /> },
 ];
 
