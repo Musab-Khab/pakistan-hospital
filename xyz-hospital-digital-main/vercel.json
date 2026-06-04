@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npx vite build",
-  "outputDirectory": ".vercel/output",
+  "buildCommand": "chmod +x node_modules/.bin/vite && npm run build",
+  "outputDirectory": "dist/client",
   "framework": null,
   "installCommand": "npm install"
 }
